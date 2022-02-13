@@ -22,7 +22,7 @@ To access Dynamic ISF, please use the Dynamic ISF branch. This has the following
 
 Dynamic ISF uses Chris WIlson's model to determine ISF instead of a static profile settings. This is applied only in the openAPSSMB plugin. The openAPSAMA plugin continues to use profile settings for ISF.
 
-The equation implemented is: ISF = 277700 / BG * TDD
+The equation implemented is: ISF = 277700 / ( BG * TDD )
 
 The implementation here splits the use into two. One to calculate current ISF for use with predictions, the other to calculate future ISF for use with dosing. 
 
