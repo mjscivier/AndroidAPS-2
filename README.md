@@ -30,7 +30,7 @@ This uses a combination of the 7 day average TDD and a linear extrapolation of t
 
 The total daily dose used in the above equation is generally weighted 40% to the 7 day average and 60% to the extrapolation from the pump data. There are some special cases where this isn't applied. These are:
 
-*When the time is earlier than 5am and the pump TDD is greater than 7 day TDD*
+*When the time is earlier than 5am and the pump TDD is greater than 7 day TDD*  
 *When the time is earlier than 7am and the pump TDD is less than 80% of 7 day TDD"
 
 In both these cases, a value of 80% of TDD is used in the caluclation.
