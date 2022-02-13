@@ -18,6 +18,8 @@ dev: [![codecov](https://codecov.io/gh/MilosKozak/AndroidAPS/branch/dev/graph/ba
 
 To access Dynamic ISF, please use the Dynamic ISF branch. This has the following changes from standard AAPS Master:
 
+## Dynamic ISF  
+
 Dynamic ISF uses Chris WIlson's model to determine ISF instead of a static profile settings. This is applied only in the openAPSSMB plugin. The openAPSAMA plugin continues to use profile settings for ISF.
 
 The equation implemented is: ISF = 277700 / BG * TDD
@@ -30,8 +32,8 @@ This uses a combination of the 7 day average TDD and a linear extrapolation of t
 
 The total daily dose used in the above equation is generally weighted 40% to the 7 day average and 60% to the extrapolation from the pump data. There are some special cases where this isn't applied. These are:
 
-*When the time is earlier than 5am and the pump TDD is greater than 7 day TDD*  
-*When the time is earlier than 7am and the pump TDD is less than 80% of 7 day TDD"
+* *When the time is earlier than 5am and the pump TDD is greater than 7 day TDD*  
+* *When the time is earlier than 7am and the pump TDD is less than 80% of 7 day TDD*
 
 In both these cases, a value of 80% of TDD is used in the caluclation.
 
