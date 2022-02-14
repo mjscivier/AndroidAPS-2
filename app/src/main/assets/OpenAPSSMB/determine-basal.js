@@ -330,6 +330,12 @@ var determine_basal = function determine_basal(glucose_status, currenttemp, iob_
     console.log("Current sensitivity for predictions is " +variable_sens+" based on current bg");
 
     sens = variable_sens;
+
+    //*********************************************************************************
+    //**                   End of Dynamic ISF code for predictions                   **
+    //*********************************************************************************
+
+
     if ( high_temptarget_raises_sensitivity && profile.temptargetSet && target_bg > normalTarget || profile.low_temptarget_lowers_sensitivity && profile.temptargetSet && target_bg < normalTarget ) {
         sens =  sens / sensitivityRatio ;
         sens = round(sens, 1);
