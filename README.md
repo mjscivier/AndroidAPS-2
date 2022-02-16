@@ -16,9 +16,19 @@ dev: [![codecov](https://codecov.io/gh/MilosKozak/AndroidAPS/branch/dev/graph/ba
 
 ![BTC](https://bitit.io/assets/coins/icon-btc-1e5a37bc0eb730ac83130d7aa859052bd4b53ac3f86f99966627801f7b0410be.svg) 3KawK8aQe48478s6fxJ8Ms6VTWkwjgr9f2
 
-To access Dynamic ISF, please use the Dynamic ISF branch. This has the following changes from standard AAPS Master:
+## Dynamic ISF
 
-## Dynamic ISF  
+To access Dynamic ISF, please use the Dynamic ISF branch. 
+
+### Pre-installation notes
+
+Please note that to use Dynamic ISF effectively, the AndroidAPS database needs a minimum of five days of data. If you are installing version 3 over the top of 2.8 or on a new phone, it's best to run the standard master branch first for those five days. Dynamic ISF will work without the full set of data in the database, as it uses an estimate of TDD based on the profile basal rates, then whatever the database has once data is populated, but it will be more stable with five days of data.
+
+**Fresh installations of v3 crashing**
+
+As mentioned in the last paragraph, if you are installing v3 over v2.8, or fresh on a new phone, the database will be empty. This creates an issue with the SMB plugin on all versions of AndroidAPS, where attempting to use SMB causes the app to crash and restart. To resolve this, you will need to run on AMA for a few hours so that SMB has some data to use for Autosens. SMB will work once this is populated, however, as recommended above, for best results, the database should be populated with five days of TDD data. 
+
+### Changes compared to standard AndroidAPS
 
 Dynamic ISF uses Chris WIlson's model to determine ISF instead of a static profile settings. This is applied only in the openAPSSMB plugin. The openAPSAMA plugin continues to use profile settings for ISF.
 
