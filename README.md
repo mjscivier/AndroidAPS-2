@@ -59,4 +59,4 @@ Future ISF uses the same TDD value as generated above. It then uses different gl
 
 If delta is positive or zero, or delta is negative but predicted glucose is above target, the future ISF value used for determining insulin required is the same as the current ISF.
 
-If delta is negative, and the predicted glucose level is below target, then the eventual BG value is used to determine ISF, as this is will result in a a less aggressive ISF value.
+If delta is negative, and the predicted glucose level is below target, then the eventual BG value is used to determine ISF, as this is will result in a less aggressive ISF value.
