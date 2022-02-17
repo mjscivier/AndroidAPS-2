@@ -36,7 +36,7 @@ The equation implemented is: ISF = 277700 / ( BG * TDD )
 
 The implementation here splits the use into two. One to calculate current ISF for use with predictions, the other to calculate future ISF for use with dosing. 
 
-**Current ISF**
+**Current ISF: predictions**
 
 This uses a combination of the 7 day average TDD and a linear extrapolation of the pumps current total insulin delivered to calculate a TDD for today.
 
@@ -53,10 +53,10 @@ In this case, the weighting is changed to be 75% pump TDD, 25% 7 day average TDD
 
 The dynamic ISF value is still adjusted when setting an activity or eating soon temp target, as per the standard oref model.
 
-**Future ISF**
+**Future ISF: dosing**
 
 Future ISF uses the same TDD value as generated above. It then uses different glucose values dependent on the case:
 
-If delta is +ve or zero, or delta is negative but predicted glucose is above target, the future ISF value used for determining insulin required is the same as the current ISF.
+If delta is positive or zero, or delta is negative but predicted glucose is above target, the future ISF value used for determining insulin required is the same as the current ISF.
 
-If delta is -ve, and the predicted glucose level is below target, then the future ISF value is used, as this is a less aggressive value.
+If delta is negative, and the predicted glucose level is below target, then the eventual BG value is used to determine ISF, as this is will result in a less aggressive ISF value.
