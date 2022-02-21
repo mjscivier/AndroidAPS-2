@@ -20,6 +20,12 @@ dev: [![codecov](https://codecov.io/gh/MilosKozak/AndroidAPS/branch/dev/graph/ba
 
 To access Dynamic ISF, please use the Dynamic ISF branch. 
 
+## Warning
+
+Dynamic ISF adjusts your ISF value as glucose levels change. If you are using the techniques described by Bernd Herpichbohm to use AAPS in an **Unannounced Meals** configuration, **Please disable all automations that adjust ISF**. If you don't do this, you are likely to end up with values for ISF that are too low and too much insulin may be delivered.   
+
+**You will probably need to reconfigure all your UAM based automations, so it is safer to disable all of them until you are familiar with Dynamic ISF**
+
 ### Pre-installation notes
 
 Please note that to use Dynamic ISF effectively, the AndroidAPS database needs a minimum of five days of data. If you are installing version 3 over the top of 2.8 or on a new phone, it's best to run the standard master branch first for those five days. Dynamic ISF will work without the full set of data in the database, as it uses an estimate of TDD based on the profile basal rates, then whatever the database has once data is populated, but it will be more stable with five days of data.
